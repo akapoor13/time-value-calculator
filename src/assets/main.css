@@ -1,0 +1,86 @@
+
+.app {
+    padding-bottom: 100px;
+}
+
+div {
+    flex-direction: column;
+    display: flex;
+    margin: 0px 0px 0px 0px;
+}
+
+.row {
+    flex-direction: row;
+    display: flex;
+}
+
+body {
+    color:rgb(200,200,200);
+    margin: 3vw;
+}
+
+h1 {
+    color:rgb(50,50,50);
+    font-family:"Arial";
+    margin-top:0px;
+}
+
+label {
+    color:rgb(50,50,50);
+    font-family:"Arial";
+    margin: 0px 0px 5px 0px;
+}
+
+h2 {
+    color:rgb(50,50,50);
+    font-family:"Arial";
+    margin: 0px 0px 15px 0px;
+}
+
+input {
+    width: 10vw;
+    margin: 0px 25px 0px 0px;
+}
+
+.section {
+    padding: 15px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+Dropdown {
+    width: 15vw;
+    margin: 0px 25px 0px 0px;
+}
+
+button {
+    width: 75px;
+    height: 25px;
+    border-radius: 4px;
+    margin: 10px 0px 0px 0px;
+}
+
+
+.title-bar {
+    margin: 0px 0px 10px 0px;
+}
+
+.tab-content {
+    padding: 10px;
+    width:75%;
+}
+
+.tab--selected{
+    border-left-color: rgb(35,35,35) !important; 
+  }
+  
+.table {
+    padding-top:25px;
+}
+
+.tab-parent {
+    font-family: 'Arial';
+}
+
+.center {
+    margin: 0 auto;
+}
