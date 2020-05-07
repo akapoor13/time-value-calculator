@@ -2,5 +2,5 @@
 .vscode
 
 ### Ignore pycache ###
-pycache/*
-
+__pycache__
+*/__pycache__
