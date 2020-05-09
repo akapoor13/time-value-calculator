@@ -7,7 +7,7 @@ def tab_setup(idd, tabLabels, tabChildrens):
     tabChildren = [dcc.Tab(label=label, value=label, children=child)
                    for label, child in zip(tabLabels, tabChildrens)]
     tabs = dcc.Tabs(id='bond-value-tab',
-                             value=tabLabels[0], children=tabChildren, vertical=True)
+                    value=tabLabels[0], children=tabChildren, vertical=True)
     return tabs
 
 
@@ -19,7 +19,7 @@ def title_bar(title):
     return title
 
 
-def create_datatable(idd, columns=[], data=[], height='', weight='', colMapping={}, rowDel=False, editable=False,
+def create_datatable(idd, columns=[], data=[{}], height='', weight='', colMapping={}, rowDel=False, editable=False,
                      rowSel=False, filterActions='none', sortActions='none', pageSize=10, overflow='auto', overflowx='auto',
                      overflowy='auto', headerAlign='center', dataAlign='center', className='', style={}):
 
@@ -36,12 +36,12 @@ def create_datatable(idd, columns=[], data=[], height='', weight='', colMapping=
         editable=editable,
         page_size=pageSize,
         style_header={
-            "backgroundColor":"rgb(35,35,35)",
+            "backgroundColor": "rgb(35,35,35)",
             "text_align": headerAlign
         },
         style_data={
             "text_align": dataAlign,
-            'color':'rgb(100,100,100)'
+            'color': 'rgb(100,100,100)'
         },
         filter_action=filterActions,
         sort_action=sortActions

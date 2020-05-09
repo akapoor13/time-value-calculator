@@ -36,7 +36,7 @@ def time_value_tab():
 
     inputs = html.Div([
         html.Div([
-            html.Label('Number of periods'),
+            html.Label('Periods (n)'),
             dcc.Input('pv-n', type='number', min=0, value=0)
         ]),
         html.Div([
@@ -48,13 +48,13 @@ def time_value_tab():
     body = html.Div([
         html.Div([
             html.H3('Cash Flow'),
-            layout_helper.create_datatable('pv-cash-flows',  height='5vh', data=[{'0': None}],
+            layout_helper.create_datatable('pv-cash-flow-table',  height='5vh', data=[{'0': 0}],
                                            editable=True)
         ]),
         html.Div([
             html.H3('Present Value'),
             html.Div([
-                layout_helper.create_datatable('pv-calculate-chart', columns=['period', 'value'], className='width-50',
+                layout_helper.create_datatable('pv-present-value-table', columns=['period', 'value'], className='width-50',
                                                colMapping=gv.colMapping, height='5vh', editable=True, pageSize=13),
                 dcc.Graph(id='pv-graph',
                           figure=defaultGraph,
@@ -65,31 +65,21 @@ def time_value_tab():
     pvTab = html.Div([
         inputs,
         body
-    ], style={'width': '100%', 'paddingBottom': '50px'})
+    ], style={
+        'width': '100%',
+        'paddingBottom': '50px'
+    },
+        className='section'
+    )
 
     return pvTab
-
-
-def bond_value_tab():
-    bvTab = html.Div()
-
-    return bvTab
-
-
-def mortgage_value_tab():
-    fvTab = html.Div()
-
-    return fvTab
 
 
 def layout():
     """Web-app HTML layout structure"""
     layout = html.Div([
-        layout_helper.title_bar("Bond-Value Calculator"),
-        layout_helper.tab_setup('bond-value-tab',
-                                ['Time-Value Calculator', 'Bond-Value Calculator',
-                                    'Mortgage-Value Calculator'],
-                                [time_value_tab(), bond_value_tab(), mortgage_value_tab()])
+        layout_helper.title_bar("Time-Value Calculator"),
+        time_value_tab()
     ], className='app')
 
     return layout
