@@ -21,13 +21,13 @@ def title_bar(title):
 
 def create_datatable(idd, columns=[], data=[], height='', weight='', colMapping={}, rowDel=False, editable=False,
                      rowSel=False, filterActions='none', sortActions='none', pageSize=10, overflow='auto', overflowx='auto',
-                     overflowy='auto', headerAlign='center', dataAlign='center'):
+                     overflowy='auto', headerAlign='center', dataAlign='center', className='', style={}):
 
     for i in columns:
         if i not in colMapping:
             colMapping[i] = i
 
-    dt = dash_table.DataTable(
+    dt = html.Div(dash_table.DataTable(
         id=idd,
         columns=[{"name": colMapping[i], "id":i} for i in columns],
         data=data,
@@ -40,10 +40,11 @@ def create_datatable(idd, columns=[], data=[], height='', weight='', colMapping=
             "text_align": headerAlign
         },
         style_data={
-            "text_align": dataAlign
+            "text_align": dataAlign,
+            'color':'rgb(100,100,100)'
         },
         filter_action=filterActions,
         sort_action=sortActions
-    )
+    ), className=className, style=style)
 
     return dt
