@@ -55,7 +55,7 @@ def time_value_tab():
             html.H3('Present Value'),
             html.Div([
                 layout_helper.create_datatable('pv-present-value-table', columns=['period', 'value'], className='width-50',
-                                               colMapping=gv.colMapping, height='5vh', editable=True, pageSize=13),
+                                               colMap=gv.colMapping, height='5vh', editable=True, pages=13),
                 dcc.Graph(id='pv-graph',
                           figure=defaultGraph,
                           className='width-50 height-100')
