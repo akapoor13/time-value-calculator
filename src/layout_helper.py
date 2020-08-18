@@ -24,12 +24,12 @@ def create_datatable(idd, columns=[], data=[{}], height='', weight='', colMap={}
                      overflowY='auto', alignH='center', alignD='center', className='', style={}):
 
     for i in columns:
-        if i not in colMapping:
-            colMapping[i] = i
+        if i not in colMap:
+            colMap[i] = i
 
     dt = html.Div(dash_table.DataTable(
         id=idd,
-        columns=[{"name": colMapping[i], "id":i} for i in columns],
+        columns=[{"name": colMap[i], "id":i} for i in columns],
         data=data,
         row_selectable=rowSel,
         row_deletable=rowDel,
